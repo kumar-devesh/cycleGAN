@@ -1,7 +1,25 @@
 cycleGAN
 ==============================
 
-A short description of the project.
+A cycleGAN is a generative model for unsupervised image to image translation from one domain to the other in the absence of paired training data with the labels corresponding each image. 
+![image](https://user-images.githubusercontent.com/76114246/139386502-a5dc1093-0a0a-4f40-8c63-dacced5d5c3e.png)
+
+Network Architecture
+-------------------
+The generator is a unet network and the discriminator is a patchGAN based network that works on patches of the image with each neuron classifying whether a patch of the neural network based on the receptive field of the network is real or not.
+
+Loss Function
+-------------------
+![image](https://user-images.githubusercontent.com/76114246/139388784-fbdc49d7-f12b-4243-8357-d69478b47d37.png)
+CycleGAN model uses the least squares GAN loss for classifying whether an image is real or fake and a cycle loss to maintain cycle consistency in the absence of paired examples.
+
+Dataset
+-------------------
+This model is being trained on horse2zebra dataset with images resized to 128 * 128. 
+
+Current Issues
+-------------------
+Generator overfitting leading to continously decreasing generator loss.
 
 Project Organization
 ------------
